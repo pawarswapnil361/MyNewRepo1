@@ -1,0 +1,8 @@
+---
+- host: all
+  become: yes
+  task: 
+  - name: start httpd
+     name: httpd
+     state: started
+    
