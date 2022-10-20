@@ -1,5 +1,10 @@
+[mywebservers]
 172.31.3.246
+
+[mydbservers]
 172.31.4.179
+
+
 
 
 

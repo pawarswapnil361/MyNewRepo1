@@ -5,22 +5,27 @@
 
   - name: install httpd
     yum:
-      name: httpd
+      name: "{{mywebpkgonubuntu}}"
       state: present
     when: ansible_os_family=="RedHat" 
 
-  - name: install tree  
-    apt:
-      name: tree
-      state: present
+  - name: install apache2
+    yum: 
+      name: "{{mywebpkgonubuntu}}"
+      state: latest
     when: ansible_os_family=="Debian"
 
   - name: start httpd
     service:
-      name: httpd
+      name: "{{mywebpkgonredhat}}"
       state: started
     when: ansible_os_family=="RedHat" 
-  
+
+  - name: restart webserver  
+    service:
+      name: "{{mywebpkgonubuntu}}"
+      state: restarted
+    when: ansible_os_family=="Debian"    
   
 
  
