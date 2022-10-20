@@ -5,7 +5,7 @@
 
   - name: install httpd
     yum:
-      name: "{{mywebpkgonubuntu}}"
+      name: "{{mywebpkgonredhat}}"
       state: present
     when: ansible_os_family=="RedHat" 
 
