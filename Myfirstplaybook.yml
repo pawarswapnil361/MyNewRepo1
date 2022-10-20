@@ -32,7 +32,7 @@
   - name: copy file from master to node server
     copy: 
       src: /home/swapnil/mydemo2file
-      dest: /home/ubuntu/mydemo2file 
+      dest: /home/mydemo2file 
     when: ansible_os_family=="RedHat"
 
 
