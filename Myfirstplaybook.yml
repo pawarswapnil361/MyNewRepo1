@@ -1,7 +1,13 @@
 ---
 - hosts: all
   become: yes
-  tasks: 
+  tasks:
+   
+  -name: install httpd
+   apt:
+    name: httpd
+    state: present
+
   - name: start httpd
     service:
      name: httpd
