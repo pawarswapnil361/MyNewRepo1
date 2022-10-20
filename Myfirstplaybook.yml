@@ -10,7 +10,7 @@
     when: ansible_os_family=="RedHat" 
 
   - name: install apache2
-    yum: 
+    apt: 
       name: "{{mywebpkgonubuntu}}"
       state: latest
     when: ansible_os_family=="Debian"
@@ -18,7 +18,7 @@
   - name: start httpd
     service:
       name: "{{mywebpkgonredhat}}"
-      state: started
+      state: restarted
     when: ansible_os_family=="RedHat" 
 
   - name: restart webserver  
