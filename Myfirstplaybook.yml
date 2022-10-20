@@ -3,6 +3,7 @@
   become: yes
   task: 
   - name: start httpd
+    service:
      name: httpd
      state: started
     
