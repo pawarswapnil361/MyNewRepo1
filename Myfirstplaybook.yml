@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: 172.31.3.246
   become: yes
   tasks:
 
@@ -11,5 +11,5 @@
   - name: start httpd
     service:
      name: httpd
-     state: restarted
+     state: started
     
