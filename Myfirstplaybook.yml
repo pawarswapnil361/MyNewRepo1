@@ -9,9 +9,9 @@
       state: present
     when: ansible_os_family=="RedHat" 
 
-  - name: intall httpd   
+  - name: install tree  
     apt:
-      name: httpd
+      name: tree
       state: present
     when: ansible_os_family=="Debian"
 
@@ -19,6 +19,11 @@
     service:
       name: httpd
       state: started
-     
+  
+  - name: start tree    
+    service:
+      name: tree
+      state: started
+
  
     
