@@ -24,11 +24,27 @@
       state: restarted
     when: ansible_os_family=="RedHat" 
 
+  - name: crete directory
+    file:
+      path: /home/swapnil/mydir1
+      state: directory
+
+  - name: copy file from master to node server
+    copy: 
+      src: mydemo2file
+      dest: /home/ubuntu/mydemo2file 
+    when: ansible_os_family=="RedHat"
+
+
+  handlers:
   - name: restart webserver  
     service:
       name: "{{mywebpkgonubuntu}}"
       state: restarted
-    when: ansible_os_family=="Debian"    
+    when: ansible_os_family=="Debian"
+
+   
+
   
 
  
