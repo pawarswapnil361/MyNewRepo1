@@ -8,12 +8,14 @@
       name: "{{mywebpkgonredhat}}"
       state: present
     when: ansible_os_family=="RedHat" 
+    tags: myhttpd
 
   - name: install apache2
     apt: 
       name: "{{mywebpkgonubuntu}}"
       state: latest
     when: ansible_os_family=="Debian"
+    tags: myapache2
 
   - name: start httpd
     service:
